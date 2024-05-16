@@ -1,0 +1,24 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: python-image-update
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: ksnithyamsc@gmail.com
+        name: ksnithya
+    push:
+      branch: main
+  interval: 10s
+  sourceRef:
+    kind: GitRepository
+    name: python-flask
+  update:
+    path: .
+    strategy: Setters
