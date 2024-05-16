@@ -5,5 +5,7 @@ metadata:
   name: python-image
   namespace: flux-system
 spec:
+  secretRef:
+    name: ecr-credentials
   image: 822626997628.dkr.ecr.ap-south-1.amazonaws.com/python-flask-demo
   interval: 10s

@@ -34,6 +34,7 @@ metadata:
   # annotations:
   #   eks.amazonaws.com/role-arn: <role arn>
 ---
+
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -60,9 +61,9 @@ spec:
             imagePullPolicy: IfNotPresent
             # You will need to set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables if not using
             # IRSA. It is recommended to store the values in a Secret and load them in the container using envFrom.
-            # envFrom:
-            # - secretRef:
-            #     name: aws-credentials
+            envFrom:
+            - secretRef:
+                name: aws-credentials
             env:
             - name: REGION
               value: ap-south-1 # change this if ECR repo is in a different region
