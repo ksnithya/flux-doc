@@ -8,4 +8,6 @@ spec:
   interval: 30s
   ref:
     branch: main
-  url: https://github.com/ksnithya/eks-python-demo.git
+  secretRef:
+    name: python-repo-auth
+  url: ssh://git@github.com/ksnithya/eks-python-demo.git
