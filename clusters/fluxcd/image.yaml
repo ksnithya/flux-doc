@@ -1,0 +1,9 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: python-image
+  namespace: flux-system
+spec:
+  image: 822626997628.dkr.ecr.ap-south-1.amazonaws.com/python-flask-demo
+  interval: 10s
